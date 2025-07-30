@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-12">
+    <footer className="bg-[#07173A] text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
@@ -20,7 +20,7 @@ export default function Footer() {
     />
   </div>
 
-  <p className="text-gray-400 text-sm leading-relaxed">
+  <p className="text-white text-sm leading-relaxed">
     Your Trusted Partner In Amplifying Asset Returns Through Premium Real Estate Investments And Advisory
     Services, Connecting Developers With Sophisticated Investors With Precision And Trust.
   </p>
@@ -29,29 +29,29 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-white">
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-white">
+                <Link href="/services" className=" hover:text-white">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link href="/properties" className="text-gray-400 hover:text-white">
+                <Link href="/properties" className=" hover:text-white">
                   Featured Properties
                 </Link>
               </li>
               <li>
-                <Link href="/investments" className="text-gray-400 hover:text-white">
+                <Link href="/investments" className=" hover:text-white">
                   Investment Opportunities
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">
+                <Link href="/about" className=" hover:text-white">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white">
+                <Link href="/contact" className=" hover:text-white">
                   Contact
                 </Link>
               </li>
@@ -63,27 +63,27 @@ export default function Footer() {
             <h4 className="font-semibold text-[#7AB945] mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services/lead-generation" className="text-gray-400 hover:text-white">
+                <Link href="/services/lead-generation" className=" hover:text-white">
                   Lead Generation
                 </Link>
               </li>
               <li>
-                <Link href="/services/sales-conversion" className="text-gray-400 hover:text-white">
+                <Link href="/services/sales-conversion" className=" hover:text-white">
                   Sales Conversion
                 </Link>
               </li>
               <li>
-                <Link href="/services/investment-advisory" className="text-gray-400 hover:text-white">
+                <Link href="/services/investment-advisory" className=" hover:text-white">
                   Investment Advisory
                 </Link>
               </li>
               <li>
-                <Link href="/services/property-management" className="text-gray-400 hover:text-white">
+                <Link href="/services/property-management" className=" hover:text-white">
                   Property Management
                 </Link>
               </li>
               <li>
-                <Link href="/services/legal-support" className="text-gray-400 hover:text-white">
+                <Link href="/services/legal-support" className=" hover:text-white">
                   Legal Support
                 </Link>
               </li>
@@ -93,10 +93,10 @@ export default function Footer() {
           {/* Stay Connected */}
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Stay Connected</h4>
-            <div className="space-y-2 text-sm text-gray-400 mb-4">
+            <div className="space-y-2 text-sm  mb-4">
               <p>+91 9035603484</p>
               <p>sandeep@assetsglobal.in</p>
-              <p># 50 2nd Floor, MM Road, Frazer Town, Bengaluru, Karnataka 560005</p>
+              <p>Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p>
             </div>
 
             <div>
@@ -104,7 +104,7 @@ export default function Footer() {
               <div className="flex">
                 <Input
                   placeholder="Your email"
-                  className="bg-slate-800 border-slate-700 text-white placeholder:text-gray-400 rounded-r-none"
+                  className="bg-white border-slate-700 text-white placeholder:text-gray-400 rounded-r-none"
                 />
                 <Button className="bg-[#7AB945] text-black hover:bg-green-600 rounded-l-none">Subscribe</Button>
               </div>
@@ -113,8 +113,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+        <div className="border-t-4 border-[#7AB945] pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white">
             <p>© 2024 Assets Global. All Rights Reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="hover:text-white">
