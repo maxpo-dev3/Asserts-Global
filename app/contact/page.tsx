@@ -1,20 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
-import toast from "react-hot-toast"
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import toast from "react-hot-toast";
 
 export default function ContactForm() {
+  const router = useRouter();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,22 +26,22 @@ export default function ContactForm() {
     investmentType: "",
     budget: "",
     subscribed: false,
-  })
+  });
 
   const handleChange = (e: any) => {
-    const { name, value, type, checked } = e.target
+    const { name, value, type, checked } = e.target;
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-    }))
-  }
+    }));
+  };
 
   const handleSelectChange = (name: string, value: string) => {
-    setForm((prev) => ({ ...prev, [name]: value }))
-  }
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
       const res = await fetch("/api/contact", {
@@ -47,11 +50,12 @@ export default function ContactForm() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(form),
-      })
+      });
 
-      if (!res.ok) throw new Error("Submission failed")
+      if (!res.ok) throw new Error("Submission failed");
 
-      toast.success("Enquiry submitted successfully!")
+      toast.success("Enquiry submitted successfully!");
+
       setForm({
         name: "",
         email: "",
@@ -60,11 +64,14 @@ export default function ContactForm() {
         investmentType: "",
         budget: "",
         subscribed: false,
-      })
+      });
+
+      // Redirect to Thank You page after a successful submission
+      router.push("/contact/thankyou");
     } catch (err) {
-      toast.error("Something went wrong. Try again.")
+      toast.error("Something went wrong. Try again.");
     }
-  }
+  };
 
   return (
     <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 text-gray-800">
@@ -78,7 +85,9 @@ export default function ContactForm() {
       <form className="space-y-5 md:space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Full Name *
+            </label>
             <Input
               name="name"
               value={form.name}
@@ -89,7 +98,9 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone Number *
+            </label>
             <Input
               name="phone"
               value={form.phone}
@@ -102,7 +113,9 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Email Address *
+          </label>
           <Input
             type="email"
             name="email"
@@ -116,7 +129,9 @@ export default function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Investment Interest</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Investment Interest
+            </label>
             <Select
               onValueChange={(value) => handleSelectChange("investmentType", value)}
               value={form.investmentType}
@@ -134,7 +149,9 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Investment Budget</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Investment Budget
+            </label>
             <Select
               onValueChange={(value) => handleSelectChange("budget", value)}
               value={form.budget}
@@ -153,7 +170,9 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Message
+          </label>
           <Textarea
             name="message"
             value={form.message}
@@ -186,5 +205,5 @@ export default function ContactForm() {
         </Button>
       </form>
     </div>
-  )
+  );
 }
