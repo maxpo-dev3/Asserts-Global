@@ -37,7 +37,7 @@ export default function InvestmentOpportunities() {
             <div key={index} className={`${opportunity.bgColor} text-white rounded-none p-6 md:p-8`}>
               <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 leading-tight">{opportunity.title}</h3>
 
-              <div className="h-1 bg-gradient-to-r from-[#7AB945] to-[#7AB94500] w-48 md:w-80 mb-4 md:mb-6"></div>
+              <div className="h-1 bg-gradient-to-r from-[#7AB945] to-[#7AB94500] w-48 md:w-48 mb-4 md:mb-6"></div>
 
               <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 text-sm md:text-base">
                 {opportunity.features.map((feature, featureIndex) => (

@@ -91,7 +91,7 @@ export default function HeroSection() {
           <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg">
             Explore Investments →
           </Button>
-          <Button onClick={() => setIsOpen(true)} className="bg-[#7AB945] hover:bg-green-600 text-white px-8 py-3 text-lg cursor-pointer">
+          <Button onClick={() => setIsOpen(true)} className="bg-[#7AB945] hover:bg-green-600 text-black px-8 py-3 text-lg cursor-pointer">
             Developer Services
           </Button>
         </div>

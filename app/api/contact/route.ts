@@ -25,6 +25,7 @@ export async function POST(req: NextRequest) {
 
     const transporter = nodemailer.createTransport({
       host: "maxpo.interactivedns.com",
+    //    host: "mail.assetsglobal.in",
       port: 465,
       secure: true,
       auth: {

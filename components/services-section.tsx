@@ -81,7 +81,7 @@ export default function ServicesSection() {
                 key={index}
                 className="bg-white pl-6 pr-6 pt-0 pb-6 shadow-lg border-2 border-black hover:border-green-200 transition-colors rounded-tl-[0px] rounded-tr-[0px] rounded-bl-[24px] rounded-br-[24px] flex flex-col items-center text-center"
               >
-                <div className="w-12 h-12 bg-[#07173A] rounded-sm flex items-center justify-center mb-6">
+                <div className="w-15 h-12 bg-[#07173A] rounded-none flex items-center justify-center mb-6">
                   <Image src={service.image} alt={service.title} width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-bold text-slate-800 mb-2">{service.title}</h4>
@@ -107,7 +107,7 @@ export default function ServicesSection() {
                 key={index}
                 className="bg-white pl-6 pr-6 pt-0 pb-6 shadow-lg border-2 border-black hover:border-green-200 transition-colors rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[0px] rounded-br-[0px] flex flex-col items-center text-center"
               >
-                <div className="w-12 h-12 bg-[#07173A] rounded-lg flex items-center justify-center mb-6">
+                <div className="w-15 h-12 bg-[#07173A] rounded-none flex items-center justify-center mb-6">
                   <Image src={service.image} alt={service.title} width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-bold text-slate-800 mb-2">{service.title}</h4>

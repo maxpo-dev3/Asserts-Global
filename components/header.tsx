@@ -89,12 +89,14 @@ const Header = () => {
                 onMouseLeave={() => setActiveIndex(null)}
               >
                 {item.href ? (
-                  <Link
-                    href={item.href}
-                    className="text-slate-700 hover:text-slate-900"
-                  >
-                    {item.title}
-                  </Link>
+<Link
+  href={item.href}
+  className="relative text-slate-700 hover:text-slate-900 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-[#7AB945] after:to-[#7AB945] after:transition-all after:duration-300 hover:after:w-full"
+  style={{ fontStyle: "var(--font-poppins)" }}
+>
+  {item.title}
+</Link>
+
                 ) : (
                   <button className="flex items-center text-slate-700 hover:text-slate-900">
                     {item.title}
@@ -130,14 +132,14 @@ const Header = () => {
           </nav>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-3 text-white">
             <Button
               variant="outline"
-              className="bg-slate-800 text-white border-slate-800 hover:bg-slate-700"
+              className="bg-[#07173A]   hover:bg-slate-700 text-white"
             >
               Login
             </Button>
-            <Button className="bg-[#7AB945] hover:bg-green-600 text-white">
+            <Button className="bg-[#7AB945] hover:bg-green-600 text-black">
               Sign Up
             </Button>
           </div>
@@ -170,9 +172,8 @@ const Header = () => {
                     >
                       <span>{item.title}</span>
                       <ChevronDown
-                        className={`ml-2 transition-transform ${
-                          expandedDropdown === index ? 'rotate-180' : ''
-                        }`}
+                        className={`ml-2 transition-transform ${expandedDropdown === index ? 'rotate-180' : ''
+                          }`}
                       />
                     </button>
                     {item.dropdown && expandedDropdown === index && (
@@ -204,11 +205,11 @@ const Header = () => {
             <div className="px-4 flex flex-col gap-2 pt-4">
               <Button
                 variant="outline"
-                className="bg-slate-800 text-white border-slate-800 hover:bg-slate-700 w-full"
+                className="bg-[#07173A] text-white border-slate-800 hover:bg-slate-700 w-full"
               >
                 Login
               </Button>
-              <Button className="bg-[#7AB945] hover:bg-green-600 text-white w-full">
+              <Button className="bg-[#7AB945] hover:bg-green-600 text-black w-full">
                 Sign Up
               </Button>
             </div>

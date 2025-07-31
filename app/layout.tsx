@@ -1,19 +1,16 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import "./globals.css"
+import { DM_Sans, Poppins } from "next/font/google"
 import Navbar from "@/components/Navbar"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // adjust as needed
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
 
 export const metadata: Metadata = {
   title: "Assets Global",
@@ -31,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`  ${poppins.variable}`}
       >
         <Header />
          {/* <Navbar /> */}

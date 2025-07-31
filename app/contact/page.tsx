@@ -74,7 +74,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 text-gray-800">
+    <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 text-gray-800 max-h-[85vh] overflow-y-auto">
       <h3 className="text-xl md:text-2xl font-bold mb-2 text-gray-900">
         Send Us An Enquiry
       </h3>
