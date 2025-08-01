@@ -119,4 +119,15 @@
     @apply bg-background text-foreground;
     @apply font-sans bg-background text-foreground;
   }
+  html {
+  scroll-behavior: smooth;
+}
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

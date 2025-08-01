@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 md:py-16 bg-white" id="about">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           {/* Image Section (unchanged) */}
-          <div className="relative w-full max-w-5xl mx-auto mb-8 h-34 md:h-80 rounded-full overflow-hidden">
+          <div className="relative w-full mx-auto mb-8 h-34 md:h-96 rounded-full overflow-hidden">
             <Image
               src="/images/about.png"
               alt="Our professional team"
@@ -21,7 +21,7 @@ export default function AboutSection() {
             About Us
           </h2>
 
-          <div className="max-w-6xl mx-auto space-y-4 sm:space-y-6 text-gray-700 leading-relaxed px-4 sm:px-8">
+          <div className=" mx-auto space-y-4 sm:space-y-6 text-gray-700 leading-relaxed px-4 sm:px-8">
             <p className="text-base sm:text-lg">
               At Assets Global, We Empower Real Estate Developers With End-To-End Growth Solutions—From AI-Driven Demand
               Generation To Accelerated Sales Execution. Our Data-Powered Platform Delivers Hyper-Targeted Buyer
