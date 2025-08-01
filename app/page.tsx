@@ -15,7 +15,6 @@ export default function HomePage() {
       <PartnershipSection />
       <PropertyListings />
       <InvestmentOpportunities />
-
       {/* <ContactSection /> */}
     </main>
   );

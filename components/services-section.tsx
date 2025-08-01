@@ -63,7 +63,7 @@ const investmentServices: Service[] = [
 export default function ServicesSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className="pt-8 pb-16">
+    <section className="pt-8 pb-16" id="services">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">
@@ -106,7 +106,10 @@ export default function ServicesSection() {
           </div>
 
           <div className="text-center">
-            <Button className="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 cursor-pointer rounded-4xl">
+            <Button
+              className="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 cursor-pointer rounded-4xl"
+              onClick={() => setIsModalOpen(true)}
+            >
               Explore Partnership
             </Button>
           </div>

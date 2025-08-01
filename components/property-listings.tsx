@@ -1,13 +1,43 @@
 "use client";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MapPin, Home, Square, Calendar } from "lucide-react";
+import { MapPin, Home, Square, Calendar, HandCoins } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { KeenSliderPlugin } from "keen-slider";
+import PropertyCard from "./ui/propertyCard";
 
 const properties = [
   {
     id: 1,
+    name: "Z-Hub by Sumadhura",
+    badge: "Commercial",
+    location: "Bangalore South, India",
+    price: "₹42L*",
+    priceLabel: "Starting @",
+    possession: "Possession - 2026",
+    bhk: "Rental Yield upto 8%",
+    area: "275-3400 SqFt",
+    icon: HandCoins,
+    image: "/images/sumadhura.png",
+  },
+  {
+    id: 2,
+    name: "Sparkling Springs",
+    badge: "Villa",
+    location: "Bangalore South, India",
+    price: "₹4.99Cr*",
+    priceLabel: "Starting @",
+    possession: "Possession - 2027",
+    bhk: "3-4 BHK",
+    area: "2932-3683 SqFt",
+    image: "/images/sparkling.jpeg",
+  },
+  {
+    id: 3,
     name: "Embassy Verde",
+    badge: "Residential",
     location: "Bangalore North, India",
     price: "₹80L*",
     priceLabel: "Starting @",
@@ -17,8 +47,9 @@ const properties = [
     image: "/images/embassy.png",
   },
   {
-    id: 2,
+    id: 4,
     name: "Purva Aerocity",
+    badge: "Residential",
     location: "Bangalore North, India",
     price: "₹1.4Cr*",
     priceLabel: "Starting @",
@@ -28,8 +59,9 @@ const properties = [
     image: "/images/purva.png",
   },
   {
-    id: 3,
+    id: 5,
     name: "Abhee Celestial City",
+    badge: "Residential",
     location: "Bangalore South, India",
     price: "₹1.3Cr*",
     priceLabel: "Starting @",
@@ -40,10 +72,61 @@ const properties = [
   },
 ];
 
+// Autoplay plugin
+const autoplay = (run = true): KeenSliderPlugin => (slider) => {
+  let timeout: ReturnType<typeof setTimeout>;
+  let mouseOver = false;
+
+  const clearNextTimeout = () => clearTimeout(timeout);
+  const nextTimeout = () => {
+    clearTimeout(timeout);
+    if (mouseOver || !run) return;
+    timeout = setTimeout(() => {
+      slider.next();
+    }, 3000);
+  };
+
+  slider.on("created", () => {
+    slider.container.addEventListener("mouseover", () => {
+      mouseOver = true;
+      clearNextTimeout();
+    });
+    slider.container.addEventListener("mouseout", () => {
+      mouseOver = false;
+      nextTimeout();
+    });
+    nextTimeout();
+  });
+
+  slider.on("dragStarted", clearNextTimeout);
+  slider.on("animationEnded", nextTimeout);
+  slider.on("updated", nextTimeout);
+};
+
 export default function PropertyListings() {
-  const router = useRouter();
+
+  const [sliderRef] = useKeenSlider(
+    {
+      loop: true,
+      renderMode: "performance",
+      slides: {
+        perView: 3,
+        spacing: 32,
+      },
+      breakpoints: {
+        "(max-width: 1024px)": {
+          slides: { perView: 2.2, spacing: 24 },
+        },
+        "(max-width: 640px)": {
+          slides: { perView: 1.2, spacing: 16 },
+        },
+      },
+    },
+    [autoplay()]
+  );
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="properties">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">
@@ -51,72 +134,22 @@ export default function PropertyListings() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+        {/* Desktop/Tablet: Keen Slider */}
+        <div className="hidden sm:block">
+          <div ref={sliderRef} className="keen-slider mb-12">
+            {properties.map((property) => (
+              <div key={property.id} className="keen-slider__slide p-2 mb-4">
+                <PropertyCard property={property} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile View: Stacked */}
+        <div className="sm:hidden flex flex-col gap-6 mb-12">
           {properties.map((property) => (
-            <div
-              key={property.id}
-              className="bg-white shadow-lg overflow-hidden rounded-4xl p-2"
-            >
-              <div className="relative h-56 md:h-64">
-                <Image
-                  src={property.image || "/placeholder.svg"}
-                  alt={property.name}
-                  fill
-                  className="object-cover rounded-t-4xl"
-                />
-              </div>
-
-              <div className="p-4 md:p-6">
-                <div className="flex justify-between items-start mb-3 md:mb-4">
-                  <h3 className="text-lg md:text-xl font-bold text-slate-800">
-                    {property.name}
-                  </h3>
-                  <div className="text-right">
-                    <div className="text-xs md:text-sm text-gray-600">
-                      {property.priceLabel}
-                    </div>
-                    <div className="text-xl md:text-2xl font-bold text-slate-800">
-                      {property.price}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center text-gray-600 text-sm mb-3">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  <span>{property.location}</span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row justify-between gap-2 text-sm text-gray-600 mb-3">
-                  <div className="flex items-center">
-                    <Home className="h-4 w-4 mr-1" />
-                    {property.bhk}
-                  </div>
-                  <div className="flex items-center">
-                    <Square className="h-4 w-4 mr-1" />
-                    {property.area}
-                  </div>
-                </div>
-
-                <div className="flex items-center text-sm text-gray-600 mb-5">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {property.possession}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    variant="outline"
-                    className="w-full sm:w-1/2 bg-transparent rounded-4xl"
-                  >
-                    View Details
-                  </Button>
-                  <Button
-                    className="w-full sm:w-1/2 bg-[#7AB945] hover:bg-green-600 rounded-4xl"
-                    onClick={() => router.push("/contact")}
-                  >
-                    Enquire Now
-                  </Button>
-                </div>
-              </div>
+            <div key={property.id} className="p-2">
+              <PropertyCard property={property} />
             </div>
           ))}
         </div>

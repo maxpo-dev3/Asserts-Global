@@ -26,13 +26,13 @@ const menuItems: MenuItem[] = [
     title: "Properties",
     dropdown: {
       India: [
-        { label: "Bangalore", href: "/properties/india/bangalore" },
-        { label: "Mumbai", href: "/properties/india/mumbai" },
+        { label: "Bangalore", href: "#properties" },
+        // { label: "Mumbai", href: "#properties" },
       ],
       "Middle East": [
-        { label: "Dubai", href: "/properties/middleeast/dubai" },
-        { label: "Abu Dhabi", href: "/properties/middleeast/abudhabi" },
-        { label: "Kuwait", href: "/properties/middleeast/kuwait" },
+        { label: "Dubai", href: "#properties" },
+        // { label: "Abu Dhabi", href: "#properties" },
+        // { label: "Kuwait", href: "#properties" },
       ],
     },
   },
@@ -40,9 +40,9 @@ const menuItems: MenuItem[] = [
     title: "Services",
     dropdown: {
       Services: [
-        { label: "Real Estate Sales", href: "/services/real-estate-sales" },
-        { label: "Capital For Developers", href: "/services/capital" },
-        { label: "Sales & Marketing Mandate", href: "/services/mandate" },
+        { label: "Real Estate Sales", href: "#services" },
+        { label: "Capital For Developers", href: "#services" },
+        { label: "Sales & Marketing Mandate", href: "#services" },
       ],
     },
   },
@@ -50,8 +50,8 @@ const menuItems: MenuItem[] = [
     title: "Investments",
     dropdown: {
       Investments: [
-        { label: "India", href: "/investments/india" },
-        { label: "Middle East", href: "/investments/middleeast" },
+        { label: "India", href: "#investments" },
+        { label: "Middle East", href: "#investments" },
       ],
     },
   },
@@ -91,12 +91,12 @@ const Header = () => {
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="relative text-slate-700 hover:text-slate-900 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-[#7AB945] after:to-[#7AB945] after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+                    className="relative text-[1rem] text-slate-700 hover:text-slate-900 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-[#7AB945] after:to-[#7AB945] after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
                   >
                     {item.title}
                   </Link>
                 ) : (
-                  <button className="flex items-center text-slate-700 hover:text-slate-900">
+                  <button className="flex items-center text-[1rem] text-slate-700 hover:text-slate-900">
                     {item.title}
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
@@ -107,17 +107,18 @@ const Header = () => {
                     {Object.entries(item.dropdown).map(
                       ([section, links], secIndex) => (
                         <div key={secIndex}>
-                          <div className="bg-[#0D1C51] text-white px-4 py-2 font-semibold rounded-t-md">
+                          <div className="bg-[#0D1C51] text-white px-4 py-2 font-semibold rounded-t-md  text-[1rem]">
                             {section}
                           </div>
                           <ul className="px-4 py-2">
                             {links.map((link, lIndex) => (
-                              <li key={lIndex} className="py-1">
+                              <li key={lIndex} className="py-1 flex gap-1 items-start">
+                                •
                                 <Link
                                   href={link.href}
-                                  className="block text-[#0D1C51] hover:text-[#4A90E2]"
+                                  className="block text-[#0D1C51] hover:text-[#4A90E2]  text-[1rem]"
                                 >
-                                  • {link.label}
+                                   {link.label}
                                 </Link>
                               </li>
                             ))}
@@ -135,11 +136,11 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-3 text-white">
             <Button
               variant="outline"
-              className="bg-[#07173A] font-bold text-white hover:bg-[#07173A] cursor-disbled  hover:text-white rounded-md"
+              className="bg-[#07173A] font-bold text-white hover:bg-[#07173A] cursor-not-allowed  hover:text-white rounded-md"
             >
               Login
             </Button>
-            <Button className="bg-[#7AB945] font-bold hover:bg-green-600 text-black cursor-pointer rounded-md ">
+            <Button className="bg-[#7AB945] font-bold hover:bg-green-600 text-black cursor-not-allowed rounded-md ">
               Sign Up
             </Button>
           </div>
