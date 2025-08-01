@@ -8,7 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 export default function ContactForm() {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 text-black ">
+    <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 text-black " id="contactUs">
       <h3 className="text-xl md:text-2xl font-bold mb-2">Send Us An Enquiry</h3>
       <p className="text-sm md:text-base mb-4 md:mb-6">
         Fill Out The Form Below And Our Team Will Get Back To You Within 24 Hours.
