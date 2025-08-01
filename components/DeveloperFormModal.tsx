@@ -10,10 +10,11 @@ interface Props {
 
 export default function DeveloperFormModal({ isOpen, onClose }: Props) {
   return (
+ 
     <Dialog open={isOpen} onClose={onClose} className="relative z-50 ">
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
       <div className="fixed inset-0 flex items-center justify-center p-4 ">
-        <Dialog.Panel className="w-full max-w-2xl rounded-lg p-6 ">
+        <Dialog.Panel className="w-full max-w-2xl rounded-lg p-6  ">
           <div className="flex justify-end mb-2">
             <button
               onClick={onClose}
@@ -22,11 +23,12 @@ export default function DeveloperFormModal({ isOpen, onClose }: Props) {
               &times;
             </button>
           </div>
-          <div className="bg-white rounded-4xl p-6  overflow-hidden">
+          <div className="bg-white rounded-4xl p-6  max-h-[85vh] overflow-auto hide-scrollbar ">
             <ContactForm />
           </div>
         </Dialog.Panel>
       </div>
     </Dialog>
+  
   );
 }

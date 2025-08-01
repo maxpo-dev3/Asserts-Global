@@ -74,7 +74,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className=" text-gray-800 max-h-[90vh] container hide-scrollbar mx-auto overflow-y-auto flex justify-start py-10 px-2">
+    <div className=" text-gray-800 container hide-scrollbar mx-auto overflow-y-auto flex justify-start py-10 px-2 h-fit">
       <div className="flex-1 max-w-6xl ">
         <h3 className="text-xl md:text-2xl font-bold mb-2  text-gray-900">
           Send Us An Enquiry
