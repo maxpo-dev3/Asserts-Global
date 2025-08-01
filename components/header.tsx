@@ -21,16 +21,16 @@ type MenuItem = {
 
 const menuItems: MenuItem[] = [
   { title: "Home", href: "/" },
-  { title: "About Us", href: "#about" },
+  { title: "About Us", href: "/#about" },
   {
     title: "Properties",
     dropdown: {
       India: [
-        { label: "Bangalore", href: "#properties" },
+        { label: "Bangalore", href: "/#properties" },
         // { label: "Mumbai", href: "#properties" },
       ],
       "Middle East": [
-        { label: "Dubai", href: "#properties" },
+        { label: "Dubai", href: "/#properties" },
         // { label: "Abu Dhabi", href: "#properties" },
         // { label: "Kuwait", href: "#properties" },
       ],
@@ -40,9 +40,9 @@ const menuItems: MenuItem[] = [
     title: "Services",
     dropdown: {
       Services: [
-        { label: "Real Estate Sales", href: "#services" },
-        { label: "Capital For Developers", href: "#services" },
-        { label: "Sales & Marketing Mandate", href: "#services" },
+        { label: "Real Estate Sales", href: "/#services" },
+        { label: "Capital For Developers", href: "/#services" },
+        { label: "Sales & Marketing Mandate", href: "/#services" },
       ],
     },
   },
@@ -50,8 +50,8 @@ const menuItems: MenuItem[] = [
     title: "Investments",
     dropdown: {
       Investments: [
-        { label: "India", href: "#investments" },
-        { label: "Middle East", href: "#investments" },
+        { label: "India", href: "/#investments" },
+        { label: "Middle East", href: "/#investments" },
       ],
     },
   },
@@ -63,8 +63,8 @@ const Header = () => {
   const [expandedDropdown, setExpandedDropdown] = useState<number | null>(null);
 
   return (
-    <header className="bg-white z-50 sticky top-0">
-      <div className="container mx-auto px-4 lg:px-0">
+    <header className="bg-white z-50 sticky top-0 px-4 lg:px-2">
+      <div className="container mx-auto ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center pl-xl md:pl-2xl">

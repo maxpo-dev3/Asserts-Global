@@ -155,7 +155,7 @@ export default function PropertyListings() {
         </div>
 
         <div className="text-center">
-          <Button className="bg-slate-800 hover:bg-slate-700 text-white px-6 md:px-8 py-3 rounded-4xl">
+          <Button className="bg-slate-800 hover:bg-slate-700 text-white px-6 md:px-8 py-3 rounded-4xl cursor-not-allowed">
             View all Properties
           </Button>
         </div>

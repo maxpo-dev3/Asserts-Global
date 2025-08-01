@@ -70,10 +70,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-white">
-              <li><Link href="/services">Our Services</Link></li>
-              <li><Link href="/properties">Featured Properties</Link></li>
-              <li><Link href="/investments">Investment Opportunities</Link></li>
-              <li><Link href="/about">About Us</Link></li>
+              <li><Link href="/#services">Our Services</Link></li>
+              <li><Link href="/#properties">Featured Properties</Link></li>
+              <li><Link href="/#investments">Investment Opportunities</Link></li>
+              <li><Link href="/#about">About Us</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -82,11 +82,11 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/services/lead-generation">Lead Generation</Link></li>
-              <li><Link href="/services/sales-conversion">Sales Conversion</Link></li>
-              <li><Link href="/services/investment-advisory">Investment Advisory</Link></li>
-              <li><Link href="/services/property-management">Property Management</Link></li>
-              <li><Link href="/services/legal-support">Legal Support</Link></li>
+              <li><Link href="/#services">Lead Generation</Link></li>
+              <li><Link href="/#services">Sales Conversion</Link></li>
+              <li><Link href="/#services">Investment Advisory</Link></li>
+              <li><Link href="/#services">Property Management</Link></li>
+              <li><Link href="/#services">Legal Support</Link></li>
             </ul>
           </div>
 
@@ -139,11 +139,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t-4 border-[#7AB945] pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white">
-            <p>© 2024 Assets Global. All Rights Reserved.</p>
+            <p>© 2025 Assets Global. All Rights Reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/terms">Terms of Service</Link>
-              <Link href="/rera">RERA Compliance</Link>
+              <Link href="/privacy" >Privacy Policy</Link>
+              <Link href="/" className='cursor-not-allowed'>Terms of Service</Link>
+              <Link href="/" className='cursor-not-allowed'>RERA Compliance</Link>
             </div>
           </div>
         </div>

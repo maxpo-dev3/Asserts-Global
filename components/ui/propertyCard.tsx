@@ -64,12 +64,12 @@ const PropertyCard = ({ property }: any) => {
         <div className="flex flex-col sm:flex-row gap-3">
           <Button
             variant="outline"
-            className="w-full sm:w-1/2 bg-transparent rounded-4xl"
+            className="w-full sm:w-1/2 bg-transparent rounded-4xl cursor-pointer"
           >
             View Details
           </Button>
           <Button
-            className="w-full sm:w-1/2 bg-[#7AB945] hover:bg-green-600 rounded-4xl"
+            className="w-full sm:w-1/2 bg-[#7AB945] hover:bg-green-600 rounded-4xl cursor-pointer"
             onClick={() => router.push("/contact")}
           >
             Enquire Now

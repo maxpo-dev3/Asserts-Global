@@ -8,8 +8,8 @@ export default function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="relative">
-      <div className="relative flex items-center container mx-auto h-[80dvh] min-h-[600px] w-[90dvw] sm:w-full overflow-hidden mt-5 md:mt-10 rounded-4xl">
+    <section className="relative px-2">
+      <div className="relative flex items-center container mx-auto h-[85dvh]  min-h-[600px] w-[90dvw] sm:w-full overflow-hidden mt-5 md:mt-8 rounded-4xl">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -41,7 +41,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto">
             <Button
               variant="outline"
-              className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-base sm:text-lg rounded-4xl"
+              className="w-full sm:w-auto bg-transparent cursor-not-allowed border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-base sm:text-lg rounded-4xl"
             >
               Explore Investments →
             </Button>

@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="py-8 md:py-16 bg-white" id="about">
+    <section className="py-8  bg-white" id="about">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center">
           {/* Image Section (unchanged) */}
           <div className="relative w-full mx-auto mb-8 h-34 md:h-96 rounded-full overflow-hidden">
             <Image
