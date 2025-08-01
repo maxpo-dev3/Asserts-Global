@@ -18,7 +18,7 @@ const properties = [
     priceLabel: "Starting @",
     possession: "Possession - 2026",
     bhk: "Rental Yield upto 8%",
-    area: "275-3400 SqFt",
+    area: "0275-3400 SqFt",
     icon: HandCoins,
     image: "/images/sumadhura.png",
   },
