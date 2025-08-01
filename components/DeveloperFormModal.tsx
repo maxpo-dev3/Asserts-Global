@@ -14,7 +14,7 @@ export default function DeveloperFormModal({ isOpen, onClose }: Props) {
     <Dialog open={isOpen} onClose={onClose} className="relative z-50 ">
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
       <div className="fixed inset-0 flex items-center justify-center p-4 ">
-        <Dialog.Panel className="w-full max-w-2xl rounded-lg bg-pink  p-6 shadow-lg ">
+        <Dialog.Panel className="w-full max-w-2xl rounded-lg  p-6 shadow-lg ">
           <div className="flex justify-end mb-2">
             <button onClick={onClose} className="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
           </div>
