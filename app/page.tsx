@@ -4,7 +4,6 @@ import AboutSection from "@/components/about-section";
 import ServicesSection from "@/components/services-section";
 import InvestmentOpportunities from "@/components/investment-opportunities";
 import PartnershipSection from "@/components/partnership-section";
-import ContactSection from "@/components/contact-section";
 
 export default function HomePage() {
   return (
@@ -15,7 +14,9 @@ export default function HomePage() {
       <PartnershipSection />
       <PropertyListings />
       <InvestmentOpportunities />
+    
       {/* <ContactSection /> */}
+
     </main>
   );
 }

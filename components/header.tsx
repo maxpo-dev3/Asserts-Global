@@ -156,11 +156,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white shadow-md border-t py-4 space-y-4">
+          <div className="lg:hidden bg-white shadow-md border-t py-4 space-y-4 rounded-b-4xl">
             {menuItems.map((item, index) => (
               <div key={index} className="px-4">
                 {item.href ? (
-                  <Link href={item.href} className="block py-2 text-slate-700">
+                  <Link href={item.href} className="block  text-slate-700">
                     {item.title}
                   </Link>
                 ) : (

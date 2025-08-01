@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PartnershipSection() {
   return (
-    <section className="py-16">
+    <section className="py-8 md:py-16">
       <div className="text-center mb-12 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold text-slate-800 mb-6 md:mb-8">
           Why Partner With Us?

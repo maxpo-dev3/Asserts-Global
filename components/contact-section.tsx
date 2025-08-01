@@ -30,12 +30,12 @@ export default function ContactSection() {
             <div className="space-y-4 md:space-y-6 mb-6 md:mb-8 text-sm md:text-base">
               <div>
                 <h4 className="font-semibold mb-1">Phone</h4>
-                <p className="text-gray-200">+91 98765 43210</p>
+                <p className="text-gray-200">+91 9035603484</p>
               </div>
 
               <div>
                 <h4 className="font-semibold mb-1">Email</h4>
-                <p className="text-gray-200">Invest@Assetsglobal.Com</p>
+                <p className="text-gray-200">sandeep@assetsglobal.in</p>
               </div>
 
               <div>
