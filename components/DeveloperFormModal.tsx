@@ -23,7 +23,7 @@ export default function DeveloperFormModal({ isOpen, onClose }: Props) {
               &times;
             </button>
           </div>
-          <div className="bg-white rounded-4xl p-6  max-h-[85vh] overflow-auto hide-scrollbar ">
+          <div className="bg-white rounded-4xl p-6 max-h-[80vh] overflow-auto hide-scrollbar ">
             <ContactForm />
           </div>
         </Dialog.Panel>
