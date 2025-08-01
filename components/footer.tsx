@@ -1,11 +1,49 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import Image from "next/image";
-import {  Mail, MapPin, Phone } from "lucide-react";
+'use client'
 
+import Link from 'next/link'
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import Image from 'next/image'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false)
+   const router = useRouter()
+
+  const handleSubscribe = async () => {
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.')
+      return
+    }
+
+    setLoading(true)
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await res.json()
+
+      if (res.ok) {
+        setEmail('')
+        router.push('/contact/thankyou') // ✅ Redirect on success
+      } else {
+        alert(data.error || 'Subscription failed. Please try again.')
+      }
+    } catch (error) {
+      console.error('Newsletter error:', error)
+      alert('Something went wrong. Try again later.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+
   return (
     <footer className="bg-[#07173A] text-white py-12">
       <div className="container mx-auto px-4">
@@ -14,7 +52,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <Image
-                src="/images/logo.png" // Replace with your image path
+                src="/images/logo.png"
                 alt="Assets Global Logo"
                 width={120}
                 height={40}
@@ -32,31 +70,11 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-white">
-              <li>
-                <Link href="/services" className=" hover:text-white">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/properties" className=" hover:text-white">
-                  Featured Properties
-                </Link>
-              </li>
-              <li>
-                <Link href="/investments" className=" hover:text-white">
-                  Investment Opportunities
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className=" hover:text-white">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className=" hover:text-white">
-                  Contact
-                </Link>
-              </li>
+              <li><Link href="/services">Our Services</Link></li>
+              <li><Link href="/properties">Featured Properties</Link></li>
+              <li><Link href="/investments">Investment Opportunities</Link></li>
+              <li><Link href="/about">About Us</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
 
@@ -64,45 +82,24 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/services/lead-generation" className=" hover:text-white">
-                  Lead Generation
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/sales-conversion" className=" hover:text-white">
-                  Sales Conversion
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/investment-advisory" className=" hover:text-white">
-                  Investment Advisory
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/property-management" className=" hover:text-white">
-                  Property Management
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/legal-support" className=" hover:text-white">
-                  Legal Support
-                </Link>
-              </li>
+              <li><Link href="/services/lead-generation">Lead Generation</Link></li>
+              <li><Link href="/services/sales-conversion">Sales Conversion</Link></li>
+              <li><Link href="/services/investment-advisory">Investment Advisory</Link></li>
+              <li><Link href="/services/property-management">Property Management</Link></li>
+              <li><Link href="/services/legal-support">Legal Support</Link></li>
             </ul>
           </div>
 
           {/* Stay Connected */}
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Stay Connected</h4>
-            <div className="space-y-2 text-sm  mb-4">
-              <a href="tel:+919035603484" className="flex items-center space-x-2 text-white ">
+            <div className="space-y-2 text-sm mb-4">
+              <a href="tel:+919035603484" className="flex items-center space-x-2 text-white">
                 <Phone className="w-5 h-5" />
                 <span>+91 9035603484</span>
               </a>
 
-
-              <a href="mailto:sandeep@assetsglobal.in" className="flex items-center  space-x-2 text-white ">
+              <a href="mailto:sandeep@assetsglobal.in" className="flex items-center space-x-2 text-white">
                 <Mail className="w-5 h-5" />
                 <span>sandeep@assetsglobal.in</span>
               </a>
@@ -113,22 +110,29 @@ export default function Footer() {
                 </div>
                 <p className="">Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p>
               </a>
-              {/* <p>Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p> */}
-
-
-
             </div>
 
-            <div>
-              <h5 className="font-medium mb-2 text-[#7AB945]">Newsletter</h5>
-              <div className="flex">
-                <Input
-                  placeholder="Your email"
-                  className="bg-white border-slate-700 text-black placeholder:text-gray-400 rounded-r-none"
-                />
-                <Button className="bg-[#7AB945] text-black cursor-pointer hover:bg-[#7AB945]-600 rounded-l-none ">Subscribe</Button>
-              </div>
-            </div>
+            {/* Newsletter */}
+ <div>
+      <h5 className="font-medium mb-2 text-[#7AB945]">Newsletter</h5>
+      <div className="flex">
+        <Input
+          placeholder="Your email"
+          className="bg-white border-slate-700 text-black placeholder:text-gray-400 rounded-r-none"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Button
+          onClick={handleSubscribe}
+          disabled={loading}
+          className="bg-[#7AB945] text-black cursor-pointer hover:bg-[#7AB945]/90 rounded-l-none"
+        >
+          {loading ? 'Submitting...' : 'Subscribe'}
+        </Button>
+      </div>
+    </div>
+
+
           </div>
         </div>
 
@@ -137,15 +141,9 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white">
             <p>© 2024 Assets Global. All Rights Reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-white">
-                Terms of Service
-              </Link>
-              <Link href="/rera" className="hover:text-white">
-                RERA Compliance
-              </Link>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Service</Link>
+              <Link href="/rera">RERA Compliance</Link>
             </div>
           </div>
         </div>
