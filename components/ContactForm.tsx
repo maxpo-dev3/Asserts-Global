@@ -8,7 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 export default function ContactForm() {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 text-black " id="contactUs">
+    <div className="bg-white backdrop-blur-sm rounded-4xl p-6 md:p-8 text-black " id="contactUs">
       <h3 className="text-xl md:text-2xl font-bold mb-2">Send Us An Enquiry</h3>
       <p className="text-sm md:text-base mb-4 md:mb-6">
         Fill Out The Form Below And Our Team Will Get Back To You Within 24 Hours.
@@ -45,7 +45,7 @@ export default function ContactForm() {
           <div>
             <label className="block text-sm font-medium mb-1">Investment Interest</label>
             <Select>
-              <SelectTrigger className="bg-white/20 border-white/30 text-black">
+              <SelectTrigger className="bg-white/20 border-white/30 text-black w-full">
                 <SelectValue placeholder="Select Investment Type" />
               </SelectTrigger>
               <SelectContent>
@@ -60,7 +60,7 @@ export default function ContactForm() {
           <div>
             <label className="block text-sm font-medium mb-1">Investment Budget</label>
             <Select>
-              <SelectTrigger className="bg-white/20 border-white/30 text-black">
+              <SelectTrigger className="bg-white/20 border-white/30 text-black w-full">
                 <SelectValue placeholder="Select Budget Range" />
               </SelectTrigger>
               <SelectContent>
@@ -88,7 +88,7 @@ export default function ContactForm() {
           </label>
         </div>
 
-        <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3">
+        <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-4xl">
           Send Enquiry
         </Button>
       </form>

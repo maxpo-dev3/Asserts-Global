@@ -1,8 +1,8 @@
-"use client"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { MapPin, Home, Square, Calendar } from "lucide-react"
-import { useRouter } from 'next/navigation'
+"use client";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { MapPin, Home, Square, Calendar } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const properties = [
   {
@@ -38,30 +38,46 @@ const properties = [
     area: "1000-1800 SqFt",
     image: "/images/abhee.png",
   },
-]
+];
 
 export default function PropertyListings() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Property Listings</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+            Property Listings
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {properties.map((property) => (
-            <div key={property.id} className="bg-white shadow-lg overflow-hidden rounded-none">
+            <div
+              key={property.id}
+              className="bg-white shadow-lg overflow-hidden rounded-4xl p-2"
+            >
               <div className="relative h-56 md:h-64">
-                <Image src={property.image || "/placeholder.svg"} alt={property.name} fill className="object-cover" />
+                <Image
+                  src={property.image || "/placeholder.svg"}
+                  alt={property.name}
+                  fill
+                  className="object-cover rounded-t-4xl"
+                />
               </div>
 
               <div className="p-4 md:p-6">
                 <div className="flex justify-between items-start mb-3 md:mb-4">
-                  <h3 className="text-lg md:text-xl font-bold text-slate-800">{property.name}</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-slate-800">
+                    {property.name}
+                  </h3>
                   <div className="text-right">
-                    <div className="text-xs md:text-sm text-gray-600">{property.priceLabel}</div>
-                    <div className="text-xl md:text-2xl font-bold text-slate-800">{property.price}</div>
+                    <div className="text-xs md:text-sm text-gray-600">
+                      {property.priceLabel}
+                    </div>
+                    <div className="text-xl md:text-2xl font-bold text-slate-800">
+                      {property.price}
+                    </div>
                   </div>
                 </div>
 
@@ -87,15 +103,18 @@ export default function PropertyListings() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button variant="outline" className="w-full sm:w-1/2 bg-transparent">
+                  <Button
+                    variant="outline"
+                    className="w-full sm:w-1/2 bg-transparent rounded-4xl"
+                  >
                     View Details
                   </Button>
-                    <Button
-      className="w-full sm:w-1/2 bg-[#7AB945] hover:bg-green-600"
-      onClick={() => router.push('/contact')}
-    >
-      Enquire Now
-    </Button>
+                  <Button
+                    className="w-full sm:w-1/2 bg-[#7AB945] hover:bg-green-600 rounded-4xl"
+                    onClick={() => router.push("/contact")}
+                  >
+                    Enquire Now
+                  </Button>
                 </div>
               </div>
             </div>
@@ -103,11 +122,11 @@ export default function PropertyListings() {
         </div>
 
         <div className="text-center">
-          <Button className="bg-slate-800 hover:bg-slate-700 text-white px-6 md:px-8 py-3">
+          <Button className="bg-slate-800 hover:bg-slate-700 text-white px-6 md:px-8 py-3 rounded-4xl">
             View all Properties
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
