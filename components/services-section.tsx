@@ -11,6 +11,7 @@ import shieldIcon from "@/public/icons/regulatory.png"
 
 import { useState } from "react"
 import DeveloperFormModal from "./DeveloperFormModal" 
+import Link from "next/link"
 
 type Service = {
   image: StaticImageData
@@ -91,9 +92,12 @@ export default function ServicesSection() {
           </div>
 
           <div className="text-center">
+            <Link href={"/contact"}>
+           
             <Button className="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 cursor-pointer">
               Explore Partnership
             </Button>
+             </Link>
           </div>
         </div>
 

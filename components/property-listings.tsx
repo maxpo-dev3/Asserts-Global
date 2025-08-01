@@ -91,7 +91,7 @@ export default function PropertyListings() {
                     View Details
                   </Button>
                     <Button
-      className="w-full sm:w-1/2 bg-[#7AB945] hover:bg-green-600"
+      className="w-full sm:w-1/2 bg-[#7AB945] hover:bg-green-600 cursor-pointer"
       onClick={() => router.push('/contact')}
     >
       Enquire Now

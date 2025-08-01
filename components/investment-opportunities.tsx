@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const opportunities = [
   {
@@ -48,12 +49,14 @@ export default function InvestmentOpportunities() {
                 ))}
               </ul>
 
+<Link href={"/contact"}>
               <Button
                 variant="outline"
-                className="w-full bg-transparent border-white text-white hover:bg-white hover:text-slate-800"
+                className="w-full bg-transparent border-white text-white cursor-pointer hover:bg-white hover:text-slate-800"
               >
                 Express Interest
               </Button>
+</Link>
             </div>
           ))}
         </div>
@@ -68,15 +71,19 @@ export default function InvestmentOpportunities() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-slate-800 hover:bg-slate-700 text-white px-6 py-3">
+            <Link href={"/contact"}>
+            <Button className="bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 cursor-pointer">
               Schedule Consultation
             </Button>
+            </Link>
+              <Link href={"/contact"}>
             <Button
               variant="outline"
-              className="border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white px-6 py-3 bg-transparent"
+              className="border-slate-800 text-slate-800 hover:bg-slate-800 cursor-pointer hover:text-white px-6 py-3 bg-transparent"
             >
               Download Investment Guide
             </Button>
+            </Link>
           </div>
         </div>
       </div>
