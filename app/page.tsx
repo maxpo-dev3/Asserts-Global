@@ -21,7 +21,7 @@ export default function HomePage() {
     
       <InvestmentOpportunities />
     
-      <ContactSection />
+      {/* <ContactSection /> */}
 
     </main>
   )

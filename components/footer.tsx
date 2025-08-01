@@ -2,6 +2,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image";
+import {  Mail, MapPin, Phone } from "lucide-react";
+
 
 export default function Footer() {
   return (
@@ -9,22 +11,22 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-<div>
-  <div className="mb-4">
-    <Image
-      src="/images/logo.png" // Replace with your image path
-      alt="Assets Global Logo"
-      width={120}
-      height={40}
-      className="h-auto w-auto"
-    />
-  </div>
+          <div>
+            <div className="mb-4">
+              <Image
+                src="/images/logo.png" // Replace with your image path
+                alt="Assets Global Logo"
+                width={120}
+                height={40}
+                className="h-auto w-auto"
+              />
+            </div>
 
-  <p className="text-white text-sm leading-relaxed">
-    Your Trusted Partner In Amplifying Asset Returns Through Premium Real Estate Investments And Advisory
-    Services, Connecting Developers With Sophisticated Investors With Precision And Trust.
-  </p>
-</div>
+            <p className="text-white text-sm leading-relaxed">
+              Your Trusted Partner In Amplifying Asset Returns Through Premium Real Estate Investments And Advisory
+              Services, Connecting Developers With Sophisticated Investors With Precision And Trust.
+            </p>
+          </div>
 
           {/* Quick Links */}
           <div>
@@ -94,9 +96,27 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Stay Connected</h4>
             <div className="space-y-2 text-sm  mb-4">
-              <p>+91 9035603484</p>
-              <p>sandeep@assetsglobal.in</p>
-              <p>Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p>
+              <a href="tel:+919035603484" className="flex items-center space-x-2 text-white ">
+                <Phone className="w-5 h-5" />
+                <span>+91 9035603484</span>
+              </a>
+
+
+              <a href="mailto:sandeep@assetsglobal.in" className="flex items-center  space-x-2 text-white ">
+                <Mail className="w-5 h-5" />
+                <span>sandeep@assetsglobal.in</span>
+              </a>
+
+              <a href="https://share.google/ZySqXqyzhaOboY9Cf" className="flex items-center  justify-between text-white  space-x-2 w-full ">
+                <div className="flex">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <p className="">Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p>
+              </a>
+              {/* <p>Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p> */}
+
+
+
             </div>
 
             <div>
@@ -104,9 +124,9 @@ export default function Footer() {
               <div className="flex">
                 <Input
                   placeholder="Your email"
-                  className="bg-white border-slate-700 text-white placeholder:text-gray-400 rounded-r-none"
+                  className="bg-white border-slate-700 text-black placeholder:text-gray-400 rounded-r-none"
                 />
-                <Button className="bg-[#7AB945] text-black hover:bg-green-600 rounded-l-none">Subscribe</Button>
+                <Button className="bg-[#7AB945] text-black cursor-pointer hover:bg-[#7AB945]-600 rounded-l-none ">Subscribe</Button>
               </div>
             </div>
           </div>
