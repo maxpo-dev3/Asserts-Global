@@ -108,7 +108,7 @@ export default function Footer() {
                 <div className="flex">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <p className="">Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p>
+                <p className="">Sky View Business Center, The Citadel Tower, Business Bay, 40th Floor, Dubai, United Arab Emirates</p>
               </a>
             </div>
 
