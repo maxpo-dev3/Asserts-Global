@@ -1,4 +1,4 @@
-export const GA_ID = 'G-ZL9QZ3DH16'; // your GA4 ID
+export const GA_ID = 'G-3CD8W5KCJB'; // your GA4 ID
 
 export const pageview = (url: string) => {
   if (typeof window.gtag !== 'function') return;
