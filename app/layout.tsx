@@ -5,6 +5,7 @@ import "./globals.css";
 import { DM_Sans, Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Script from "next/script";
+import ClientAnalytics from "@/components/clientAnalytics";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -49,10 +50,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`  ${poppins.variable}`}>
+
         <Header />
         {/* <Navbar /> */}
         <main>{children}</main>
         <Footer />
+        <ClientAnalytics />
       </body>
     </html>
   );
