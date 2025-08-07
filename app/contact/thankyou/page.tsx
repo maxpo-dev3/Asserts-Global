@@ -10,7 +10,7 @@ export default function ThankYouPage() {
           Thank You For Your Enquiry!
         </h1>
         <p className="text-lg text-gray-700 mb-2">
-          You are now part of the Bengaluru Plot Expo community.
+          You are now part of the Assets Global Community.
         </p>
         {/* <p className="text-md text-gray-600 mb-6">
           Our team will get in touch with you soon.

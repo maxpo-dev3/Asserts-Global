@@ -99,16 +99,16 @@ export default function Footer() {
                 <span>+91 9035603484</span>
               </a>
 
-              <a href="mailto:sandeep@assetsglobal.in" className="flex items-center space-x-2 text-white">
+              <a href="mailto:info@assetsglobal.in" className="flex items-center space-x-2 text-white">
                 <Mail className="w-5 h-5" />
-                <span>sandeep@assetsglobal.in</span>
+                <span>info@assetsglobal.in</span>
               </a>
 
               <a href="https://share.google/ZySqXqyzhaOboY9Cf" className="flex items-center  justify-between text-white  space-x-2 w-full ">
                 <div className="flex">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <p className="">Sky View Business Cener, Tower, The Citadel - 40th Floor - Business Bay - Dubai - United Arab Emirates</p>
+                <p className="">Sky View Business Center, The Citadel Tower, Business Bay, 40th Floor, Dubai, United Arab Emirates</p>
               </a>
             </div>
 
