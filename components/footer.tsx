@@ -96,7 +96,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm mb-4">
               <a href="tel:+919035603484" className="flex items-center space-x-2 text-white">
                 <Phone className="w-5 h-5" />
-                <span>+91 9035603484</span>
+                <span>+91 9035803484</span>
               </a>
 
               <a href="mailto:info@assetsglobal.in" className="flex items-center space-x-2 text-white">
