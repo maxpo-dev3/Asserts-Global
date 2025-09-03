@@ -94,7 +94,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#7AB945] mb-4">Stay Connected</h4>
             <div className="space-y-2 text-sm mb-4">
-              <a href="tel:+919035603484" className="flex items-center space-x-2 text-white">
+              <a href="tel:+919035803484" className="flex items-center space-x-2 text-white">
                 <Phone className="w-5 h-5" />
                 <span>+91 9035803484</span>
               </a>
